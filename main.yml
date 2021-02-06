@@ -10,15 +10,15 @@
   vars:
     apache_create_vhosts: false
     apache_remove_default_vhost: true
-    certbot_admin_email: "nasyikat0416@gmail.com"
+    certbot_admin_email: "tekinachicago@gmail.com"
     certbot_create_if_missing: true
     certbot_create_standalone_stop_services:
     - httpd
     certbot_certs:
     - domains:
-      - "r1soft.nasyikataws.com"
-    apache_server_name: "r1soft.nasyikataws.com"
-    apache_default_admin_email: "r1soft.nasyikataws.com"
+      - "r1soft.allclouddevops.com"
+    apache_server_name: "r1soft.allclouddevops.com"
+    apache_default_admin_email: "tekinachicago@gmail.com"
     apache_copy_ssl_files: false
     apache_ssl_cert_file_location: "/etc/letsencrypt/live/{{ apache_server_name }}/fullchain.pem"
     apache_ssl_cert_key_location: "/etc/letsencrypt/live/{{ apache_server_name }}/privkey.pem"
@@ -48,7 +48,7 @@
       when: ansible_os_family == 'RedHat'
 
   roles:
-    - role: '/home/ec2-user/r1soft/roles/ansible-role-apache'
-    - role: '/home/ec2-user/r1soft/roles/ansible-role-certbot'
-    - role: '/home/ec2-user/r1soft/roles/ansible-role-apache-proxy'
+    - role: '/root/r1soft-cert/roles/ansible-role-apache'
+    - role: '/root/r1soft-cert/roles/ansible-role-certbot'
+    - role: '/root/r1soft-cert/roles/ansible-role-apache-proxy'
 
